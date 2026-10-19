@@ -1,4 +1,51 @@
-# Nessus Authenticated VA Scanning — Windows & Linux Servers
+<div align="center">
+
+<img src="assets/va-hero.svg" alt="Nessus Authenticated VA Guide 2.0 banner" width="100%">
+
+# Nessus Authenticated VA Guide 2.0
+
+**AI-guided infrastructure intake · authorized vulnerability assessment planning · audit evidence**
+
+[![Workflow](https://img.shields.io/badge/Workflow-AI--Ready-2bcfaf?style=for-the-badge)](AI_INSTRUCTIONS.md) [![Platforms](https://img.shields.io/badge/Targets-Windows%20%2B%20Linux-548bc5?style=for-the-badge)](README.md) [![Scope](https://img.shields.io/badge/Authorized-VA%20Only-e2b66e?style=for-the-badge)](README.md)
+
+<img src="assets/va-planning.gif" alt="Animated fictional walkthrough of scoped VA planning, review and audit evidence" width="100%">
+
+*Illustrative process animation. Does not show a real scan.*
+
+<img src="assets/va-architecture.svg" alt="Infrastructure questionnaire to approved scan to remediation audit evidence architecture" width="100%">
+
+</div>
+
+## 🤖 Start with an AI assistant
+
+Paste this prompt into an assistant that can read repository files:
+
+```text
+Read AGENTS.md and AI_INSTRUCTIONS.md in this Nessus Authenticated VA
+Guide GitHub repository. Guide me one question at a time, starting
+with whether I have Windows, Linux, or mixed infrastructure.
+Collect non-secret infrastructure details, written authorization,
+licensing and safe scan boundaries. Then produce an environment-specific
+VA plan, remediation workflow and audit evidence checklist.
+```
+
+**Sharing a repository URL alone does not guarantee that every AI platform reads instructions or can execute repository code.** The included AI instructions are interoperable prompts, **not a deployed AI chatbot**. Do not share passwords, tokens, private SSH keys or confidential host inventories.
+
+### Offline personalized plan (no scan executed)
+
+```bash
+python scripts/build_plan.py --input examples/authorized-lab.json --output VA-Review-Plan.md
+```
+
+Uses a **fictional authorized lab** by default. The tool creates an audit/scoping document, not scan results.
+
+## 📊 Security governance and audit alignment
+
+The [12-reference applicability matrix](docs/compliance-applicability.md) discusses CERT-In, SEBI CSCRF, RBI, DPDP, NSE/BSE, NPCI/UPI, PFUTP, ISO 27001, ISO 27090 (unverified reference), MITRE ATT&CK, ISO 42001 and NIST CSF. Alignment is conditional; this guide does **not** certify compliance or mandate Nessus for any particular regulation.
+
+---
+
+## Original Nessus configuration guide
 
 Authenticated Vulnerability Assessment (VA) scan configuration and setup guide for Windows and Linux servers using Tenable Nessus (Professional / Expert), from trial installation through to a tuned, production-safe Advanced Scan policy — including servers running an ELK (Elasticsearch, Logstash, Kibana) stack.
 

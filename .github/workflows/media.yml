@@ -1,0 +1,26 @@
+name: Generate VA guide GIF
+on:
+  push:
+    branches: [upgrade/ai-ready-v2]
+    paths: ["scripts/generate_gif.py", ".github/workflows/media.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install "Pillow>=10,<13"
+      - run: python scripts/generate_gif.py
+      - name: Commit local media
+        run: |
+          git add assets/va-planning.gif
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "docs: add six-stage VA planning GIF"
+          git push
