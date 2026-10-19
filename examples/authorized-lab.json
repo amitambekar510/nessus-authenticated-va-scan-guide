@@ -1,0 +1,17 @@
+{
+  "environment": "LAB",
+  "os": "Mixed Windows and Linux",
+  "host_count": 4,
+  "scanner": "Existing licensed Nessus deployment",
+  "authentication": "Vault-managed delegated Windows account and SSH key",
+  "approval": "Written authorization verified by operator",
+  "change_window": "Approved lab window",
+  "critical_services": [
+    "Non-production ELK test node"
+  ],
+  "reporting": "Risk-ranked findings, remediation owner, retest evidence",
+  "frameworks": [
+    "ISO/IEC 27001",
+    "NIST CSF"
+  ]
+}
